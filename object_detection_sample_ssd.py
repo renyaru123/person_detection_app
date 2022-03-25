@@ -155,8 +155,8 @@ def main():  # noqa
             # Draw a bounding box on a output image
             cv2.rectangle(output_image, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
 
-    cv2.imwrite(os.path.join(path, 'out.bmp'), output_image)
-    if os.path.exists('out.bmp'):
+    is_create = cv2.imwrite(os.path.join(path, 'out.bmp'), output_image)
+    if is_create:
         log.info('Image out.bmp created!')
     else:
         log.error('Image out.bmp was not created. Check your permissions.')
